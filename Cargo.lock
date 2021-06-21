@@ -2048,6 +2048,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "quoted-string"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5a206a30ce37189d1340e7da2ee0b4d65e342590af676541c23a4f3959ba272e"
+
+[[package]]
 name = "rand"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3183,6 +3189,7 @@ dependencies = [
  "prometheus",
  "prost",
  "prost-types",
+ "quoted-string",
  "rand 0.7.3",
  "reqwest",
  "rustc-serialize",

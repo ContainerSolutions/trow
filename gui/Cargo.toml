@@ -1,0 +1,46 @@
+[package]
+name = "gui"
+version = "0.1.0"
+authors = ["Eric Caleb <eric.caleb@container-solutions.com>"]
+edition = "2018"
+license = "Apache-2.0"
+description = "Trow. The Cloud Native Registry"
+repository = "https://github.com/ContainerSolutions/trow"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+# less code to include into binary
+panic = 'abort' 
+# optimization over all codebase ( better optimization, slower build )
+codegen-units = 1
+# optimization for size ( more aggressive )
+opt-level = 'z' 
+# optimization for size 
+# opt-level = 's' 
+# link time optimization using using whole-program analysis
+lto = true
+
+[features]
+# default = ["console_error_panic_hook", "wee_alloc"]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+yew = "0.18"
+yew-router = "0.15.0"
+yewtil = "0.3.2"
+wasm-bindgen = "0.2"
+wasm-bindgen-test = "0.3"
+serde = "1.0"
+serde_json = "1.0"
+log = "0.4"
+wasm-logger = "0.2.0"
+anyhow = "1.0"
+thiserror = "1.0"
+cfg-if = "1.0"
+wee_alloc = "0.4.5"
+base64 = "0.13.0"
+console_error_panic_hook = { version = "0.1.1", optional = true }
